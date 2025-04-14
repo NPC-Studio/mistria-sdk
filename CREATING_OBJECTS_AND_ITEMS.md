@@ -197,10 +197,10 @@ in the game, but if modders have some method of describing other sprites, those 
 {
     "extras/objects": [
         {
-            "name": "qi_fruit",
+            "name": "my_fruit",
             "category": "crop",
             "data": {
-                "harvest": "qi_fruit",
+                "harvest": "my_fruit",
                 "day_to_stage": [
                     0,
                     1,
@@ -221,11 +221,11 @@ in the game, but if modders have some method of describing other sprites, those 
     ],
     "extras/items": [
         {
-            "name": "qi_seed",
+            "name": "my_seed",
             "data": {
-                "name": "Qi Seed",
-                "description": "Qi Fruit seed. Wait, where'd you get this?",
-                "crop_object": "qi_fruit",
+                "name": "My Seed",
+                "description": "My Fruit seed. Wait, where'd you get this?",
+                "crop_object": "my_fruit",
                 "mini_sprite": "spr_ui_tool_tip_icon_basil",
                 "icon_sprite": "spr_ui_item_bagseed_basil_icon",
                 "sow_sprite": "spr_ui_item_bagseed_basil_mini",
@@ -238,7 +238,7 @@ in the game, but if modders have some method of describing other sprites, those 
             }
         },
         {
-            "name": "qi_fruit",
+            "name": "my_fruit",
             "data": {
                 "description": "items/other/crops_and_forage/basil/description",
                 "name": "items/other/crops_and_forage/basil/name",
@@ -256,8 +256,8 @@ in the game, but if modders have some method of describing other sprites, those 
 }
 ```
 
-The above creates a crop, which is made by an item `qi_seed`, which harvests into a item, `qi_fruit`.
-To get the `qi_seed` in-game, one could edit their save file with [vaultc](https://github.com/NPC-Studio/vaultc)
+The above creates a crop, which is made by an item `my_seed`, which harvests into a item, `my_fruit`.
+To get the `my_seed` in-game, one could edit their save file with [vaultc](https://github.com/NPC-Studio/vaultc)
 or edit some other part of the game to make that item accessible. For furniture, using the appropriate tags will allow
 the furniture to appear in the crafting menu.
 
