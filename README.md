@@ -7,3 +7,4 @@ Fields of Mistria is fully playable and designed to be enjoyed without the use o
 You can buy the game on [Steam](https://store.steampowered.com/app/2142790/Fields_of_Mistria/).
 
 To see how to add objects and items, [read here](./CREATING_OBJECTS_AND_ITEMS.md).
+To see how to view the log, [read here](./LOGS.md).

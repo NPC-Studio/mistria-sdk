@@ -1,11 +1,10 @@
 # Object and Item Ids
 
-***This document reflects version v0.13.3 of Fields of Mistria. It is currently maintained per release.***
+***This document reflects version v0.13.4 of Fields of Mistria. It is currently maintained per release.***
 
 ***Fields of Mistria itself does not support or maintain mods. We are releasing this document to help those mods which already exist, but we will not provide customer support on any mods or for mod creation.***
 
-Adding new objects and items into *Fields of Mistria* is relatively easy post `v0.13.3`. This document serves as a guide for modders
-and hackers.
+Adding new objects and items into *Fields of Mistria* is relatively easy post `v0.13.3`. This document serves as a guide for modders and hackers.
 
 First, objects are things which appear on the *Grid*, such as furniture, crops, trees, coops, barns, and grass.
 
@@ -260,5 +259,11 @@ The above creates a crop, which is made by an item `my_seed`, which harvests int
 To get the `my_seed` in-game, one could edit their save file with [vaultc](https://github.com/NPC-Studio/vaultc)
 or edit some other part of the game to make that item accessible. For furniture, using the appropriate tags will allow
 the furniture to appear in the crafting menu.
+
+## Missing Objects and Items
+
+If an id is present in a save file, but no longer declared, we do two different strategies. For objects, we ignore them entirely. For items, we replace them with `unknown_item`. If the user saves again, this `unknown_item` is permanently saved over their original ID, and they'll need to find an old save to get those lost ids again.
+
+In both cases, an error is emitted in the logs. See [here](./LOGS.md) for more information on seeing those.
 
 Good luck, happy hacking!
