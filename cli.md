@@ -4,13 +4,13 @@
 
 To do that, navigate to *Fields of Mistria*'s installation folder by right clicking the game in your library, and then navigating to "Manage" and then "Browse Local Files".
 
-![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Browse Local Files"](images/cli/browse-local-files.png)
+![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Browse Local Files"](browse-local-files.png)
 
 Then, in this folder, open a Terminal to invoke the game manually (in Windows 11 you can often right click "Open Terminal here"). Otherwise, you can copy the path from the File Explorer and manually move a terminal there using `cd`.
 
 Here is an example in Ubuntu and Windows 11 of opening a terminal in this location:
 
-![An image showing right-clicking in the system file explorer and pressing "Open in Terminal"](images/cli/open-terminal-kde.png)
+![An image showing right-clicking in the system file explorer and pressing "Open in Terminal"](open-terminal-kde.png)
 
 Then you can invoke the game depending on platform and terminal:
 
@@ -47,9 +47,9 @@ You can give no command and still set these options to run the game normally wit
 
 You can also just add these options into Steam's command line options for the game, though this will change how the game runs *every time* going forwards, which we don't recommend:
 
-![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Properties"](images/cli/go-to-properties.png)
+![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Properties"](go-to-properties.png)
 
-![An image showing command line options being added to the "Launch Options" tab under "General"](images/cli/steam-cli-options.png)
+![An image showing command line options being added to the "Launch Options" tab under "General"](steam-cli-options.png)
 
 * `--all-unlocks` — Starts new save files with all content available by default
 
