@@ -44,19 +44,19 @@ This is an _optional field_.
 
 See [Animation `filter_kind`](./animations##filter_kind) for more. When an Animation is on an atlas, their version of this property is *ignored* and *only the Atlas's property matters.*
 
-### `wrap`
+## `wrap`
 
 This is an _optional field_.
 
 See Animation's `wrap` for more. When an Animation is on an atlas, their version of this property is *ignored* and *only the Atlas's property matters.*
 
-## `srgb`
+### `srgb`
 
 This is an _optional field_.
 
 See Animation's `srgb` for more. When an Animation is on an atlas, their version of this property is *ignored* and *only the Atlas's property matters.*
 
-## `animations`
+### `animations`
 
 This is the main property of a texture atlas and is **required**.
 

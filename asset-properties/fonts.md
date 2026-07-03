@@ -39,7 +39,7 @@ This is an _optional field_.
 
 Fonts which can only render at multiples of their `minimum_expected_size` should set this field. Setting this field to true without also having a `minimum_expected_size` is a logical error.
 
-## `allow_shading`
+### `allow_shading`
 
 This is an _optional field_.
 

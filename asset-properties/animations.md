@@ -75,7 +75,7 @@ There are three options:
 
 If `wrap` is missing, it will be assumed to be `Repeat`.
 
-## `srgb`
+### `srgb`
 
 This is an _optional field_.
 
@@ -168,7 +168,7 @@ which always points at the texel which is to the top-left on an texture.
 
 If `offset` is not present, we will assume an offset of `Top` and `Left`.
 
-## `atlas`
+### `atlas`
 
 Animations can have an explicit atlas name on them. This is purely informative for tools like `maybe atlas create --tagged` and `maybe atlas --list` to work with, which they use to create atlases.
 

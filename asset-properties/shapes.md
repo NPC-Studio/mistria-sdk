@@ -65,4 +65,4 @@ The width and height of the box. This value must be greater than zero in both ax
 
 This is a **_required property_** when `kind` is "circle".
 
-`C / 2π`. This value must be greater than zero.
+`radius` is `C / 2π`. This value must be greater than zero.

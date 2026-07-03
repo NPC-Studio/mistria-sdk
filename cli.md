@@ -1,4 +1,4 @@
-## Invoking the Game's Command Line Interface
+# Invoking the Game's Command Line Interface
 
 *Fields of Mistria* has robust logging and a complex command line interface (CLI). This document serves as a guide on how to view those logs. This is the **ideal** way to test mods for the game, as you'll get stacktraces, debug messages, and warnings, beyond what is available in the crash window.
 

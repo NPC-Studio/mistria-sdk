@@ -25,7 +25,7 @@ asset_kind = "AudioStrings"
 load_sync = false
 ```
 
-## `load_sync`
+### `load_sync`
 
 This is an _optional field_.
 
