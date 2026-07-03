@@ -40,8 +40,6 @@ Subcommands for creating, editing, and viewing atlas data
 * `list` — Lists information on animations with or without an explicit atlas tag
 * `set` — Set a new `atlas` on animations
 
-
-
 ## `maybe atlas create`
 
 Build a new TextureAtlas, either with specific paths or with an atlas tag

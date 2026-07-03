@@ -1,12 +1,12 @@
 # Accessing BUGGER
-`BUGGER` is an in-game terminal for in-game manipulation of Fields of Mistria. It is considered a `debug-tool` so you can only access `BUGGER` if you pass in `--debug-tools=true` to the [CLI on startup](./CLI.md).
+`BUGGER` is an in-game terminal for in-game manipulation of Fields of Mistria. It is considered a `debug-tool` so you can only access `BUGGER` if you pass in `--debug-tools=true` to the [CLI on startup](./cli.md).
 
 All of the commands available in `BUGGER` are **not** stable and **many** will cause instabilities in your game. The most stable thing to do is to **not use `BUGGER`**. We have no stability promises with `BUGGER` and it undergoes zero testing beyond our own use as developers.
 
 With all those warnings out of the way...
 
 ## Activating `BUGGER`
-`BUGGER` is considered a `debug-tool` so you can only access `BUGGER` if you pass in `--debug-tools=true` to the [CLI on startup](./CLI.md).
+`BUGGER` is considered a `debug-tool` so you can only access `BUGGER` if you pass in `--debug-tools=true` to the [CLI on startup](./cli.md).
 
 Once that is done, you should see see the following in the Title Screen:
 

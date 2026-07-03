@@ -50,9 +50,9 @@ You can give no command and still set these options to run the game normally wit
 
 You can also just add these options into Steam's command line options for the game, though this will change how the game runs *every time* going forwards, which we don't recommend:
 
-![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Properties"](go-to-properties.png)
+![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Properties"](./_images/cli/go-to-properties.png)
 
-![An image showing command line options being added to the "Launch Options" tab under "General"](steam-cli-options.png)
+![An image showing command line options being added to the "Launch Options" tab under "General"](./_images/cli/steam-cli-options.png)
 
 * `--all-unlocks` — Starts new save files with all content available by default
 

@@ -1,6 +1,10 @@
 # Animations
 
-Animations are "sprites" in other engines. These are images, or textures, which get fed into an `mwe::Sprite` eventually. Here is a standard Animation `TOML` entry:
+Animations are "sprites" in other engines. These are images, or textures, which get fed into an `mwe::Sprite` eventually.
+
+There **must be a matching `png` file next to this meta file of the same file stem.** For example, if there is a meta-file `spr_player.meta.toml`, then there must also be a `spr_player.png` in the same directory.
+
+Here is a standard Animation `TOML` entry:
 
 ```toml
 frame_size = [100, 100]
@@ -20,8 +24,6 @@ here is the minimum viable Animation meta file:
 ```toml
 frame_size = [100, 100]
 ```
-
-There **must be a matching `png` file next to this meta file of the same file stem.** For example, if there is a meta-file `spr_player.meta.toml`, then there must also be a `spr_player.png` in the same directory.
 
 Let's go through each property:
 
@@ -62,15 +64,8 @@ The `wrap` field tells the GPU what to do for texture lookups that go outside th
 
 There are three options:
 
-- `Clamp`: Reads outside the texture's dimensions will be clamped to the texture's range.
-  For example, trying to read (1.32, 1.21) will instead read (1, 1).
-  More particularly, it will be clamed to `(1 / 2N)..(1 - 1/2N)`, where `N`
-  is the size of the axis. So technically the maximum and minimum values aren't quite
-  0 and 1, but the nearest `1 / 2N` of those values.
-
-- `Repeat`: Reads outside the texture's dimensions will repeat the texture. For example, reading `1.23` will instead read `.23`. In fact, all we do is ignore the whole integer and only read
-  the fractional part of the texture uv.
-
+- `Clamp`: Reads outside the texture's dimensions will be clamped to the texture's range. For example, trying to read (1.32, 1.21) will instead read (1, 1). More particularly, it will be clamed to `(1 / 2N)..(1 - 1/2N)`, where `N` is the size of the axis. So technically the maximum and minimum values aren't quite 0 and 1, but the nearest `1 / 2N` of those values.
+- `Repeat`: Reads outside the texture's dimensions will repeat the texture. For example, reading `1.23` will instead read `.23`. In fact, all we do is ignore the whole integer and only read the fractional part of the texture uv.
 - `Mirror`: Reads outside the texture's dimensions will seemingly mirror the texture.
 
 If `wrap` is missing, it will be assumed to be `Repeat`.

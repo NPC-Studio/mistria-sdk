@@ -26,7 +26,7 @@ Let's go through each `meta_properties` field first:
 **_Required_**
 
 The `id` is a `u64` id, such as `6d8ebd6fbe11cfaf`, rendered in a hex format, to uniquely identify
-a given asset. Assets refer to other assets by this `u64` id always, which allows assets to move around in the asset folder as users would like without breaking inter-asset connections. See more about how assets interact with each other in [required_assets](###required_assets).
+a given asset. Assets refer to other assets by this `u64` id always, which allows assets to move around in the asset folder as users would like without breaking inter-asset connections. See more about how assets interact with each other in [required_assets](#required_assets).
 
 Ultimately, the `id` **is** the asset. Projects are free to arrange and re-arrange their assets in any folders they'd like, and even rename assets, but the `id` uniquely identifies each asset.
 
