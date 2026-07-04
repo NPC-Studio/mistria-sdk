@@ -2,14 +2,8 @@ The name of the engine which Fields of Mistria uses is `maybe`. Additionally, th
 
 Run:
 
-```pwsh
-& path/to/maybe.exe --help; 
-```
-
-or on linux:
-
 ```sh
-path/to/maybe --help;
+path/to/maybe --help; 
 ```
 
 The following is an overview of the commands available for `maybe`:

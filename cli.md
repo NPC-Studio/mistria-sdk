@@ -4,13 +4,15 @@
 
 To do that, navigate to *Fields of Mistria*'s installation folder by right clicking the game in your library, and then navigating to "Manage" and then "Browse Local Files".
 
-![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Browse Local Files"](browse-local-files.png)
+![An image showing right-clicking the Steam game *Fields of Mistria* and clicking "Browse Local Files"](./_images/cli/browse-local-files.png)
 
 Then, in this folder, open a Terminal to invoke the game manually (in Windows 11 you can often right click "Open Terminal here"). Otherwise, you can copy the path from the File Explorer and manually move a terminal there using `cd`.
 
 Here is an example in Ubuntu and Windows 11 of opening a terminal in this location:
 
-![An image showing right-clicking in the system file explorer and pressing "Open in Terminal"](open-terminal-kde.png)
+![An image showing right-clicking in Windows 11's file explorer and pressing "Open in Terminal"](./_images/cli/open-terminal-win11.png)
+
+![An image showing right-clicking in a linux file explorer and pressing "Open in Terminal"](./_images/cli/open-terminal-kde.png)
 
 Then you can invoke the game depending on platform and terminal:
 
@@ -20,10 +22,11 @@ Powershell, and Windows in general, make getting the command line output very di
 and get output:
 
 ```pwsh
-& ./FieldsOfMistria.exe 2>&1 --help | Write-Host
+./FieldsOfMistria --help | Write-Host
 ```
 
-Note the `&` at the start: this is the [call operator](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.6#call-operator-) which allows you to invoke the executable directly in the folder. `2>&1` and `| Write-Host` are both used to force the Window executable to output to a terminal.
+Note the `| Write-Host` is used to force the Window executable to output to a terminal. Note also how the `--help` (and any other command) goes before the `| Write-Host`.
+
 ### Invoking Mistria on Unix
 
 On Unix platforms, it is far simpler:
@@ -37,7 +40,7 @@ In either case, you'll be greeted by Mistria's help options.
 ## Mistria's CLI Options
 Here are the following cli options for Fields of Mistria:
 
-**Usage on pwsh:** `./FieldsOfMistria.exe 2>&1 [OPTIONS] [COMMAND] | Write-Host`
+**Usage on pwsh:** `./FieldsOfMistria [OPTIONS] [COMMAND] | Write-Host`
 **Usage on unix:** `./FieldsOfMistria [OPTIONS] [COMMAND]`
 
 **The most important command** is `./FieldsOfMistria --help` which will list all of this information out directly.

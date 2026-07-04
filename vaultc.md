@@ -3,12 +3,6 @@ A tool for unpacking and repacking Fields of Mistria `.sav` files.
 
 Run:
 
-```pwsh
-& path/to/vaultc.exe --help; 
-```
-
-or on linux:
-
 ```sh
 path/to/vaultc --help;
 ```
@@ -16,11 +10,6 @@ path/to/vaultc --help;
 You can also run:
 
 ```sh
-# on powershell
-& path/to/vaultc.exe pack --help;
-& path/to/vaultc.exe unpack --help;
-
-# on sh
 path/to/vaultc pack --help;
 path/to/vaultc unpack --help;
 ```
