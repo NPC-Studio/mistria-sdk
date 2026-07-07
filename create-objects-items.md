@@ -1,6 +1,6 @@
 # Object and Item Ids
 
-Adding new objects and items into *Fields of Mistria* is extremely easy post `v0.16.1`. This document serves as a guide for modders and hackers.
+Adding new objects and items into *Fields of Mistria* is extremely easy after the `v0.16` update. This document serves as a guide for modders and hackers.
 
 First, objects are things which appear on the *Grid*, such as furniture, crops, trees, coops, barns, and grass.
 

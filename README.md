@@ -1,6 +1,6 @@
 # mistria-sdk
 
-This repository is, currently, a grouping of files describing methods of editing and modifying *Fields of Mistria.* ***This document reflects version v0.16.1 of Fields of Mistria. It is currently maintained per release.***
+This repository is, currently, a grouping of files describing methods of editing and modifying *Fields of Mistria.* This document reflects version `v0.16.2` of Fields of Mistria. It is currently maintained per release.
 
 ***We are releasing this document to help those mods which already exist, but we will not provide customer support on any mods or for mod creation.***
 
