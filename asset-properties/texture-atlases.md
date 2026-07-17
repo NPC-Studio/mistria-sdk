@@ -27,10 +27,16 @@ Here is an example:
     
     [[asset_properties.animations]]
         texture_ids = ["51c9c384bf06bed9::2", "ca4f7e1896daaf62::2"]
-        top_left_dimensions = [1, 59, 48, 56]
+        placement = [1, 59, 48, 56, 14, 14]
 ```
 
 There **must be a matching `png` file next to this meta file of the same file stem**. For example, if there is a meta-file `AnimalAtlas_0.meta.toml`, then there must also be a `AnimalAtlas_0.png` in the same directory.
+
+## Trimming
+
+Images are, by `maybe` in `v0.8` or greater, *trimmed*, which is to say, all whitespace (defined as any `RGBA` pixel where `A` is `0`, regardless of what RGB is) surrounding the opaque pixels is removed. This can be trivially done manually in tools like Photoshop and Aseprite. We remove whitespace from all sides of the image.
+
+To support trimming on TextureAtlases, we have some optional fields in `placement` now. See the below documentation on it.
 
 ### `dimensions`
 
@@ -71,11 +77,22 @@ For example, the `TextureId` `"abcdefabcdefabcd::27"` would be a valid `TextureI
 
 This is an **array** because we often have **duplicates** of the same frame, made multiple times. For frames to be in this array together, they must be *pixel for pixel identical*. Since each string only refers to a given frame, this means an animation can have frame0 as a unique frame and frame1 as a duplicate frame.
 
-### `top_left_dimensions`
-This is an array of 4 numbers.
-- The first element of the array (**very confusingly**) is the `x` coordinate where the sub-image is placed on the `TextureAtlas`. Arguably, this field should be called `left_top_dimensions` as a result, but it is not.
-- The second element is the `y` coordinate where the image is placed on the `TextureAtlas`. Like all coordinates in `.meta.toml` files, this `y`-coordinate is relative to the top of the file.
-- The third element is the `width` of the sub-image.
-- The fourth element is the `height` of the sub-image.
+### `placement`
+This is an array of 8 *or four* numbers.
+- The first element of the array is the `x` coordinate where the sub-image is placed on the `TextureAtlas`.
+- The second element is the `y` coordinate where the image is placed on the `TextureAtlas`. Like all coordinates in `.meta.toml` files, this `y`-coordinate is relative to the top of the file, like in most image editing applications.
+- The third element is the `size` of the sub-image. When multiple texture ids share one `placement`, they *must all have been the same size.* Failure to adhere to this can create visual bugs.
+- The fourth element is the `size` of the sub-image. When multiple texture ids share one `placement`, they *must all have been the same size.* Failure to adhere to this can create visual bugs.
 
-So for the `top_left_dimensions` of `[1, 59, 48, 56]`, we'd expect to find this sub-image located at `[1, 59]` and for its width and height to be `[48, 56]`.
+So for the `placement` of `[1, 59, 48, 56]`, we'd expect to find this sub-image located at `[1, 59]` and for its width and height to be `[48, 56]` and for it to have not been trimmed at all.
+
+It is permissable to use simply atlasing and only have these 4 elements. However, Fields of Mistria itself will add four more entries to this array for more optimal atlasing starting in `v0.16.4`:
+
+- The fifth *optional ement* is the `original_width` of the sub-image. If the sub-image was trimmed before being placed in the atlas, then the original size of the sub-image should be notated here. When multiple texture ids share one `placement`, they *must all have had the same original_size.* Failure to adhere to this can create visual bugs.
+- The sixth *optional ement* is the `original_height` of the sub-image. If the sub-image was trimmed before being placed in the atlas, then the original size of the sub-image should be notated here. When multiple texture ids share one `placement`, they *must all have had the same original_size.* Failure to adhere to this can create visual bugs.
+- The seventh *optional element* is the `minimum_x_trim` of the sub-image. If the sub-image has been trimmed *before* it was placed within the atlas, then this should show the amount trimmed from the `left` side of the image. When multiple texture ids share one `placement`, they *must all have the same minimum_x_trim.* Failure to adhere to this can create visual bugs.
+- The eighth *optional element* is the `minimum_y_trim` of the sub-image. If the sub-image has been trimmed *before* it was placed within the atlas, then this should show the amount trimmed from the `top` side of the image. When multiple texture ids share one `placement`, they *must all have the same minimum_x_trim.* Failure to adhere to this can create visual bugs.
+
+When there are no elements [4..8], we assume that `size` and `original_size` are the same, and that no trim has occured. This should allow modded atlases built against `v0.16.3` to work on `v0.16.4`. There will be a loading error if any sized array except `4` or `8` is given.
+
+This space will continue to have updates. To allow for even better packing in the future, we will allow placements to share texels which differ in `trim` and `original_size`.
